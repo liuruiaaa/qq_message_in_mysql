@@ -1,0 +1,43 @@
+# swagger相关配置
+swagger:
+  swaggerable: true #是否开启Swagger，true:开启，false:关闭。关闭时，swaggerUI界面不再显示接口列表
+  title: 开放接口文档  #swagger文档名称
+  description: REST-API在线文档文档 #swagger文档描述
+  version: 1.0 #swagger文档版本
+  apis:
+    #base-package: cn.net.cdsz.svc.interfaces  #待生成Swagger API文档的controller的包名
+    base-package: net.lz1998.pbbot.controller  #待生成Swagger API文档的controller的包名
+
+
+spring:
+  datasource:
+    name: mirai_msg_w
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    type: com.mysql.cj.jdbc.MysqlDataSource
+    url: jdbc:mysql://127.0.0.1:3306/mirai_msg?&useUnicode=true&characterEncoding=utf-8&useSSL=false
+    username: root
+    password:
+    # 双数据源
+#    database1:  # 数据源1（standard 数据库，注意是jdbc-url）
+#      jdbc-url: jdbc:mysql://192.168.136.121:3306/123123?&useUnicode=true&characterEncoding=utf-8&useSSL=false
+#      driver-class-name: com.mysql.cj.jdbc.Driver  # 如果驱动类报红，将pom.xml中的mysql依赖的scope节点删除即可。
+#      username: root
+#      password:
+#    database2:  # 数据源1（standard 数据库，注意是jdbc-url）
+#      jdbc-url: jdbc:mysql://192.168.136.121:3306/kjds_loan?&useUnicode=true&characterEncoding=utf-8&useSSL=false
+#      driver-class-name: com.mysql.cj.jdbc.Driver  # 如果驱动类报红，将pom.xml中的mysql依赖的scope节点删除即可。
+#      username: root
+#      password:
+
+  redis:
+    url: 192.168.136.121
+    port: 6379
+    database: 7
+    jedis:
+      pool:
+        min-idle: 0
+        max-idle: 10
+        max-active: 200
+
+
+
